@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/repo',
+    path: '/:username/:reponame',
     name: 'Repo',
     component: Repo,
   },

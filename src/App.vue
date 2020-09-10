@@ -59,11 +59,6 @@ ul {
   --border: #e1e4e8;
   --ticker: rgba(209, 213, 218, 0.5);
 
-  --calendar-scale-0: #ebedf0;
-  --calendar-scale-1: #9be9a8;
-  --calendar-scale-2: #3fc463;
-  --calendar-scale-3: #30a14e;
-  --calendar-scale-4: #216e3a;
   --javascript: #f1e05a;
   --typescript: #2b7489;
   --other-language: #8257e5;
