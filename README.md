@@ -1,24 +1,80 @@
-# vue-github-scss
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-## Project setup
-```
-yarn install
+  <h3 align="center">Github UI Clone - VueJS</h3>
+
+  <p align="center">
+    An awesome README template to jumpstart your projects!
+    <br />
+    <a href="https://github.beyondboundary.com.br">View Demo</a>
+  </p>
+</p>
+
+<!-- TABLE OF CONTENTS -->
+
+## Table of Contents
+
+- [About the Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+- [License](#license)
+- [Contact](#contact)
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+This project was built with the goal of learning about how to create a simple application using Vue.
+
+### Built With
+
+- [Vue](https://vuejs.org/)
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Installation
+
+1. Clone the repo
+
+```sh
+git clone https://github.com/linkthales/vue-github-ui-clone.git
 ```
 
-### Compiles and hot-reloads for development
+2. Install NPM packages with yarn
+
+```sh
+yarn
+# or
+npm install
 ```
+
+3. Get the server up and running
+
+```sh
 yarn serve
+# or
+npm run serve
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+<!-- LICENSE -->
 
-### Lints and fixes files
-```
-yarn lint
-```
+## License
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<!-- CONTACT -->
+
+## Contact
+
+Thales Martins - linkthales@hotmail.com
+
+Project Link: [https://github.com/linkthales/vue-github-ui-clone](https://github.com/linkthales/vue-github-ui-clone)

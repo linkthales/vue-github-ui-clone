@@ -41,6 +41,14 @@ export default {
   data() {
     return { calendarValues: generateHeatmapValues() };
   },
+
+  watch: {
+    $route: {
+      handler() {
+        this.calendarValues = generateHeatmapValues();
+      },
+    },
+  },
 };
 </script>
 
