@@ -8,7 +8,7 @@
   <h3 align="center">Github UI Clone - VueJS</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    A simple VueJS app to try out the framework!
     <br />
     <a href="https://github.beyondboundary.com.br">View Demo</a>
   </p>
