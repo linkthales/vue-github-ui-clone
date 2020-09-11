@@ -49,7 +49,7 @@ To get a local copy up and running follow these simple example steps.
 git clone https://github.com/linkthales/vue-github-ui-clone.git
 ```
 
-2. Install NPM packages with yarn
+2. Install NPM packages
 
 ```sh
 yarn
