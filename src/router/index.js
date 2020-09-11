@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Repo from '../views/Repo.vue';
 import Profile from '../views/Profile.vue';
 
 Vue.use(VueRouter);
@@ -9,7 +8,7 @@ const routes = [
   {
     path: '/:username/:reponame',
     name: 'Repo',
-    component: Repo,
+    component: () => import('../views/Repo.vue'),
   },
   {
     path: '/',

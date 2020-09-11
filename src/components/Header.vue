@@ -41,7 +41,6 @@ export default {
       this.$router.push(`/${this.search.toLowerCase().trim()}`);
     },
     handleThemeChange() {
-      console.log('handleThemeChange');
       const htmlElement = document.documentElement;
 
       if (this.darkMode) {
