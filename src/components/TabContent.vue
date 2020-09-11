@@ -2,13 +2,14 @@
   <div class="tab-content">
     <img class="icon" src="@/assets/bookmark-line.svg" alt="bookmark-icon" />
     <span class="label">Repositories</span>
-    <span class="number">26</span>
+    <span class="number">{{ publicRepos }}</span>
   </div>
 </template>
 
 <script>
 export default {
   name: 'TabContent',
+  props: { publicRepos: Number },
 };
 </script>
 
@@ -33,6 +34,11 @@ export default {
     background: var(--ticker);
     padding: 2px 6px;
     border-radius: 24px;
+  }
+
+  .icon {
+    filter: var(--icon);
+    flex-shrink: 0;
   }
 }
 </style>

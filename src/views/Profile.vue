@@ -1,9 +1,17 @@
 <template>
-  <div class="profile">
+  <div v-if="error" class="profile">
+    <h1>{{ error }}</h1>
+  </div>
+
+  <div v-else-if="!user || !repos" class="profile">
+    <h1>Loading...</h1>
+  </div>
+
+  <div v-else class="profile">
     <div class="tab desktop">
       <div class="tab-wrapper">
         <span class="offset" />
-        <TabContent />
+        <TabContent :publicRepos="user.public_repos" />
       </div>
 
       <span class="line" />
@@ -12,21 +20,21 @@
     <div class="main">
       <div class="left-side">
         <ProfileData
-          username="linkthales"
-          name="Thales Martins"
-          avatarUrl="https://avatars2.githubusercontent.com/u/8526366?s=460&v=4"
-          :followers="123"
-          :following="789"
-          company="Beyond the Boundary"
-          location="Maringá, Brazil"
-          email="linkthales@hotmail.com"
-          blog=""
+          :username="user.login"
+          :name="user.name"
+          :avatarUrl="user.avatar_url"
+          :followers="user.followers"
+          :following="user.following"
+          :company="user.company"
+          :location="user.location"
+          :email="user.email"
+          :blog="user.blog"
         />
       </div>
 
       <div class="right-side">
         <div class="tab mobile">
-          <TabContent />
+          <TabContent :publicRepos="user.public_repos" />
 
           <span class="line" />
         </div>
@@ -36,14 +44,14 @@
 
           <div>
             <RepoCard
-              v-for="n in [1, 2, 3, 4, 5, 6]"
-              :key="n"
-              username="linkthales"
-              reponame="vue-github"
-              description="Vue js"
-              :language="n % 3 === 0 ? 'Javascript' : 'Typescript'"
-              :stars="3"
-              :forks="5"
+              v-for="repo in repos"
+              :key="repo.name"
+              :username="repo.owner.login"
+              :reponame="repo.name"
+              :description="repo.description"
+              :language="repo.language"
+              :stars="repo.stargazers_count"
+              :forks="repo.forks"
             ></RepoCard>
           </div>
         </div>
@@ -59,6 +67,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 import TabContent from '@/components/TabContent.vue';
 import ProfileData from '@/components/ProfileData.vue';
 import RepoCard from '@/components/RepoCard.vue';
@@ -71,6 +81,50 @@ export default {
     ProfileData,
     RepoCard,
     RandomCalendar,
+  },
+
+  data() {
+    return { user: undefined, repos: undefined, error: '' };
+  },
+
+  create() {
+    this.updatePage();
+  },
+
+  watch: {
+    $route: {
+      immediate: true,
+      handler() {
+        this.updatePage();
+      },
+    },
+  },
+
+  methods: {
+    updatePage() {
+      const { username = 'linkthales' } = this.$route.params;
+
+      Promise.all([
+        axios.get(`https://api.github.com/users/${username}`),
+        axios.get(`https://api.github.com/users/${username}/repos`),
+      ]).then(async responses => {
+        const [userResponse, reposResponse] = responses;
+
+        if (userResponse.status === 404) {
+          this.error = 'User not found!';
+          return;
+        }
+
+        this.user = userResponse.data;
+
+        const repos = reposResponse.data;
+
+        const shuffledRepos = repos.sort(() => 0.5 - Math.random());
+        const slicedRepos = shuffledRepos.slice(0, 6);
+
+        this.repos = slicedRepos;
+      });
+    },
   },
 };
 </script>

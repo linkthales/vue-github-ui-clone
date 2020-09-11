@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Repo from '../views/Repo.vue';
+import Profile from '../views/Profile.vue';
 
 Vue.use(VueRouter);
 
@@ -12,8 +13,12 @@ const routes = [
   },
   {
     path: '/',
+    component: Profile,
+  },
+  {
+    path: '/:username',
     name: 'Profile',
-    component: () => import('../views/Profile.vue'),
+    component: Profile,
   },
 ];
 

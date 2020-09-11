@@ -150,7 +150,7 @@ export default {
 .icon {
   width: 16px;
   height: 16px;
-  fill: var(--icon);
+  filter: var(--icon);
   flex-shrink: 0;
 }
 </style>

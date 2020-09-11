@@ -127,7 +127,7 @@ export default {
 .icon {
   height: 16px;
   width: 16px;
-  fill: var(--icon);
+  filter: var(--icon);
   flex-shrink: 0;
 }
 </style>
