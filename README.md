@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2318fa82-4d65-4c13-85c0-373255b8797a/deploy-status)](https://app.netlify.com/sites/vuejs-github-ui-clone/deploys)
+
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
